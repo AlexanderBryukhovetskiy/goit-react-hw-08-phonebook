@@ -11,25 +11,34 @@
 
 
 import css from "./App.module.css";
-import Container from "../Container";
+import Layout from "../Layout";
 import ContactForm from "components/ContactForm";
 import  ContactList  from "../ContactList";
 import Filter from "../Filter";
 
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchContacts } from "redux/operations";
+
 const App = () => {
-  
+
+  const dispatch = useDispatch();
+
+  useEffect( () => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (  
-      <Container>
-        <div className={css.phoneBookContainer}>
-          <h1 className={css.title}>Phonebook</h1>
-          <ContactForm/>
-        </div>
+    <Layout>
+      <div className={css.phoneBookContainer}>
+        <h1 className={css.title}>Phonebook</h1>
+        <ContactForm/>
+      </div>
 
-        <h2 className={css.title}>Contacts</h2> 
-        <Filter/>
-        <ContactList/>
-      </Container>
+      <h2 className={css.title}>Contacts</h2> 
+      <Filter/>
+      <ContactList/>
+    </Layout>
   )
 };
 

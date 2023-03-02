@@ -1,8 +1,8 @@
 import React from "react";
-import css from "./Container.module.css";
+import css from "./Layout.module.css";
 import PropTypes from "prop-types";
 
-const Container = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className={css.container}>
       {children}
@@ -10,9 +10,9 @@ const Container = ({ children }) => {
   )
 };
 
-Container.propTypes = {
+Layout.propTypes = {
   children: PropTypes.arrayOf(
     PropTypes.any.isRequired).isRequired
 };
 
-export default Container;
+export default Layout;

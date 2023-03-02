@@ -1,22 +1,25 @@
 import css from "./ContactForm.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { addContact } from "redux/contactsSlice";
-import { nanoid } from "@reduxjs/toolkit";
-import { getContacts } from "redux/constants";
+import { useSelector, 
+  // useDispatch 
+} from "react-redux";
+import { getContacts } from "redux/selectors";
+// import { nanoid } from "@reduxjs/toolkit";
+
+// import { addContact } from "redux/contactsSlice";
 
 
 const ContactForm = () => {
 
   const state = useSelector(getContacts);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
 
     const form = event.target;
     const name = form.elements.name.value; 
-    const number = form.elements.number.value;
+    // const number = form.elements.number.value;
 
     const isUnique = state.filter(  
       savedContact => savedContact.name.toLowerCase() === name.toLowerCase());
@@ -25,11 +28,13 @@ const ContactForm = () => {
       return alert (`${name} is already in contacts.`);
     }
     else {
-      dispatch(addContact( {
-        name,
-        number,
-        id: nanoid()
-      }));
+
+      console.log('Message from ContactForm: You try to add new contact to phonebook, but there is no code to do this action. You need to write code to add contact!');
+      // dispatch(addContact( {
+      //   name,
+      //   number,
+      //   id: nanoid()
+      // }));
     }
     // console.log('contacts after addContact:', state);
     form.reset();

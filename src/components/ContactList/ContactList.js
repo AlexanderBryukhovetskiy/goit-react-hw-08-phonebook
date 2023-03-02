@@ -1,7 +1,9 @@
 import React from "react";
 import css from "./ContactList.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "redux/contactsSlice";
+import { useSelector, 
+  // useDispatch
+} from "react-redux";
+// import { deleteContact } from "redux/contactsSlice";
 import { getContacts, getFilter } from "redux/selectors";
 
 
@@ -11,10 +13,10 @@ const ContactList = () => {
   const contactsList = useSelector( getContacts );
   const filterValue = useSelector( getFilter) ;
 
-  console.log("contacts in ContactList : ", contactsList);
-  console.log("++++++++++++++++++++++ : ", filterValue);
+  console.log("contactsList in ContactList :", contactsList);
+  console.log("filterValue in ContactList :", filterValue);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   if (contactsList?.length > 0) {
 
@@ -31,7 +33,11 @@ const ContactList = () => {
           <p className={css.contactNumber}>{number}</p>
         
           <button type="button" className={css.deleteBtn}
-            onClick={() => {dispatch(deleteContact(id))} }  
+            onClick={
+              // () => {dispatch(deleteContact(id)) }  // old code 
+              
+              console.log('Message from ContactList: You try to delete contact from phonebook, but there is no code to do this action. You need to write code to add contact!')
+              }  
           >Delete
           </button>
         </li>

@@ -4,14 +4,12 @@ import { filterChange } from "redux/filterSlice";
 import { useDispatch } from "react-redux";
 
 
-
 const Filter = () => {
 
   const dispatch = useDispatch();
 
   const handleChange = (event) =>{
-    console.log("event.currentTarget.value in Filter:", event.currentTarget.value);
-
+ 
     const filterValue = event.currentTarget.value.trim();
     console.log("filterValue :" , filterValue);
 
