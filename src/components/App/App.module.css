@@ -17,6 +17,11 @@
   margin-bottom: 20px;  
 }
 
+.isLoadingMessage{
+  margin-top: 10px;
+  font-size: 20px;
+}
+
 .searchInput{
   display: flex;
   flex-direction: column;
