@@ -2,28 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { fetchContacts, addContact, deleteContact } from "./operations";
 
-// const contactsInitialState = [];
-
-// const contactsSlice = createSlice( { 
-//   name: 'contacts',
-
-//   initialState: contactsInitialState,
-
-//   reducers: {
-//     addContact(state, action) {
-//       return [...state, action.payload];
-//     },
-
-//     deleteContact (state, action) {
-//       return state.filter( contact => contact.id !== action.payload);
-//     }  
-//   }
-// });
-
-// export const { addContact, deleteContact } = contactsSlice.actions;
-
-// export const contactsReducer = contactsSlice.reducer;
-
 
 const contactsSlice = createSlice( { 
   name: 'contacts',
@@ -65,7 +43,10 @@ const contactsSlice = createSlice( {
     [deleteContact.fulfilled](state, action){
       state.isLoading = false;
       state.error = null;
-      state.contacts = action.payload;
+      const index = state.contacts.findIndex(
+        contact => contact.id === action.payload
+      );
+      state.contacts.splice(index, 1);
     },
     [deleteContact.rejected](state, action){
       state.isLoading = false;
