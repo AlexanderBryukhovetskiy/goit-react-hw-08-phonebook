@@ -15,21 +15,12 @@ import Layout from "../Layout";
 import ContactForm from "components/ContactForm";
 import  ContactList  from "../ContactList";
 import Filter from "../Filter";
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "redux/operations";
+import { useSelector } from "react-redux";
 import { selectIsLoading, selectError } from "redux/selectors";
 
 const App = () => {
-
-  const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-
-  useEffect( () => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (  
     <Layout>
