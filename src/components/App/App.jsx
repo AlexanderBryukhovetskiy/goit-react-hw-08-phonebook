@@ -4,7 +4,6 @@
 //npm install @reduxjs/toolkit
 
 // npm install @reduxjs/toolkit react-redux
-// npm i redux-persist
 
 // next npx is not used because HW based on template:
 // npx create-react-app my-app --template redux
