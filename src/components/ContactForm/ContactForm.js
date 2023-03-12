@@ -1,7 +1,7 @@
 import css from "./ContactForm.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { selectContacts } from "redux/selectors";
-import { addContact } from "redux/operations";
+import { selectContacts } from "redux/contacts/selectors";
+import { addContact } from "redux/contacts/operations";
 
 
 const ContactForm = () => {
@@ -25,7 +25,7 @@ const ContactForm = () => {
     else { 
       const newContact = {
         name, 
-        phone: number,
+        number,
       };
       dispatch(addContact( newContact ));
       console.log('add new contact:', newContact);

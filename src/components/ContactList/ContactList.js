@@ -2,8 +2,8 @@ import React from "react";
 import css from "./ContactList.module.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectVisibleContacts } from "redux/selectors";
-import { fetchContacts, deleteContact  } from "redux/operations";
+import { selectVisibleContacts } from "redux/contacts/selectors";
+import { fetchContacts, deleteContact  } from "redux/contacts/operations";
 
 
 const ContactList = () => {
@@ -17,11 +17,11 @@ const ContactList = () => {
 
   return (visibleContacts 
   && <ul className={css.list}>
-    {visibleContacts.map( ({ name, phone, id }) => (  
+    {visibleContacts.map( ({ name, number, id }) => (  
       
       <li key={id} className={css.listItem}>
         <p className={css.contactName}>{name} : </p>
-        <p className={css.contactNumber}>{phone}</p>
+        <p className={css.contactNumber}>{number}</p>
       
         <button 
           type="button" 
