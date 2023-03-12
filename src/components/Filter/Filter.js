@@ -17,14 +17,15 @@ const Filter = () => {
   }
 
   return (
-    <div className={css.searchInput}>
-      <label>Find contact by name
+    <form className={css.filterForm}>
+      <label className={css.filterLabel}>Find contact by name
         <input
+        className={css.filterInput}
         type="text"
         onChange={handleChange}
         />
       </label>
-    </div>
+    </form>
   )
 }
 

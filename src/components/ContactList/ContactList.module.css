@@ -1,10 +1,10 @@
 .list {
-    margin-top: 10px;
+    padding: 10px;
 }
 .listItem {
     display: flex;
     column-gap: 10px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
