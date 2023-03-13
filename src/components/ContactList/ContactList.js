@@ -15,23 +15,23 @@ const ContactList = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  return (visibleContacts 
-  && <ul className={css.list}>
-    {visibleContacts.map( ({ name, number, id }) => (  
-      
-      <li key={id} className={css.listItem}>
-        <p className={css.contactName}>{name} : </p>
-        <p className={css.contactNumber}>{number}</p>
-      
-        <button 
-          type="button" 
-          className={css.deleteBtn}
-          onClick={() => {dispatch(deleteContact(id))}}
-        >Delete
-        </button>
-      </li>
-      )
-    )}
+  return (visibleContacts && 
+    <ul className={css.list}>
+      {visibleContacts.map( ({ name, number, id }) => (  
+        
+        <li key={id} className={css.listItem}>
+          <p className={css.contactName}>{name} : </p>
+          <p className={css.contactNumber}>{number}</p>
+        
+          <button 
+            type="button" 
+            className={css.deleteBtn}
+            onClick={() => {dispatch(deleteContact(id))}}
+          >Delete
+          </button>
+        </li>
+        )
+      )}
     </ul>
   )
 };

@@ -15,24 +15,23 @@
 .registerInput {
   font-size: 16px;
   font-weight: 300;
-  width: 200px;
+  width: 192px;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  padding-top: 5px;
 }
 
 .submitBtn {
-  width: 203px;
-  padding: 1px 3px;
-  margin-top: 12px;
+  width: 80px;
+  padding: 0;
   font-size: 16px;
-  font-weight: 100;
-  background: rgb(152, 231, 241);
-
+  font-weight: 200;
   border: 1px solid darkslategrey;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .submitBtn:hover{
-  border: 1px solid rgb(152, 231, 241);
-  background: darkslategrey;
-  color: mintcream
+  font-weight: 400;
 }

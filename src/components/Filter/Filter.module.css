@@ -3,10 +3,11 @@
   flex-direction: column;
   row-gap: 20px;
   padding: 10px;
+  margin: 20px 0 10px;
 }
 
 .filterLabel {
-  width: 50px;
+  width: 200px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -14,4 +15,10 @@
 .filterInput {
   font-size: 16px;
   font-weight: 300;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid ;
+  padding: 5px 1px 0;
+  width: 200px;
 }
+

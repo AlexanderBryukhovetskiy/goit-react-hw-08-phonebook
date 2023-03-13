@@ -1,21 +1,38 @@
 .list {
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 10px;
 }
 .listItem {
-    display: flex;
-    column-gap: 10px;
-    font-size: 16px;
-    font-weight: 400;
+  display: flex;
+  column-gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.listItem + .listItem {
-    margin-top: 10px;
-}
+/* .listItem + .listItem {
+  margin-top: 10px;
+} */
 
 .contactName {
-    width: 170px;
+  width: 120px;
 }
 
 .contactNumber {
-    width:  200px;
+  width:  120px;
+}
+
+.deleteBtn {
+  width: 45px;
+  padding: 0px 2px;
+  font-size: 12px;
+  font-weight: 200;
+  border: 1px solid darkslategrey;
+  border-radius: 3px;
+  cursor: pointer;
+}
+  
+.deleteBtn:hover{
+  font-weight: 400;
 }
